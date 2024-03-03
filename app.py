@@ -7,8 +7,6 @@ import moviepy.editor as mp
 
 app = Flask(__name__)
 
-
-
 @app.route("/", methods=["GET", "POST"])
 def downloadVideo():
     message = ''
@@ -72,4 +70,4 @@ def downloadVideo():
     return render_template('index.html', message=message, errorType=errorType)
     
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
