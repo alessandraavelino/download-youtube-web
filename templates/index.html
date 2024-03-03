@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cut My Video</title>
+    <title>SongSlicer | Baixar vídeos do YouTube</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,24 +22,19 @@
 </head>
 
 <body>
-    <header class="text-gray-600 body-font">
+    <header class="text-black-700 body-font bottom-2 shadow">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-                    viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
+                <img src="../static/songslicer.svg" width="100" height="100" alt="Logo do SongSlicer">
                 <span class="ml-3 text-xl">SongSlicer</span>
             </a>
-            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <a class="mr-5 hover:text-gray-900">First Link</a>
-                <a class="mr-5 hover:text-gray-900">Second Link</a>
-                <a class="mr-5 hover:text-gray-900">Third Link</a>
-                <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+            <nav class="md:ml-auto font-semibold flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-indigo-500 cursor-pointer">Download</a>
+                <a class="mr-5 hover:text-indigo-500 cursor-pointer">Sobre</a>
+                <a class="mr-5 hover:text-indigo-500 cursor-pointer">Em breve</a>
             </nav>
             <button
-                class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+                class="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Contato
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -57,7 +52,7 @@
                 <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Baixe, converta e edite as
                     suas mídias mais rápido! </h1>
                 <p class="mb-8 leading-relaxed">Basta copiar a URL do Vídeo que deseja baixar do YouTube, colar abaixo e
-                    clicar em baixar.</p>
+                    configurar seu download.</p>
 
                 <form action="/download" method="post">
                     <div class="flex w-full md:justify-start justify-center items-end">
@@ -85,16 +80,80 @@
 
                         </div>
                         <button type="submit"
-                            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Baixar</button>
+                            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded font-bold text-lg">Baixar</button>
                 </form>
             </div>
 
         </div>
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+            <img class="object-cover object-center rounded" alt="hero" src="../static/banner.svg">
         </div>
         </div>
     </section>
+    <section class="text-gray-600 body-font bg-indigo-500">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Por que usar o SongSlicer ?</h1>
+            <!-- <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p> -->
+          </div>
+          <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Livre de vírus maliciosos</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Sem anúncios</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Download rápido</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Automação de download em massa (em breve)</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Pack Truffaut Blue</span>
+              </div>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">The Catcher In The Rye</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Função para esconder o alerta após 3 segundos
