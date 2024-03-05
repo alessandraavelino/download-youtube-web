@@ -4,6 +4,7 @@ from pytube import YouTube
 from pathlib import Path
 from moviepy.editor import *
 import moviepy.editor as mp
+import time
 
 app = Flask(__name__)
 
@@ -32,6 +33,7 @@ def downloadVideo():
                 filename = os.path.join("Downloads", video.default_filename)
                 video.download(filename=filename)
                 
+                time.sleep(2)
 
                 if file_format == "mp3":
                     output_path = "Downloads"
@@ -41,6 +43,8 @@ def downloadVideo():
                     default_filename = audio_stream.default_filename
                     os.rename(os.path.join(output_path, default_filename), os.path.join(output_path, default_filename.split('.')[0] + ".mp3"))
                     
+                    time.sleep(2)
+
                     # Enviando o arquivo mp3 como resposta
                     mp3_filename = os.path.join(output_path, default_filename.split('.')[0] + ".mp3")
                     return send_file(mp3_filename, as_attachment=True)
@@ -48,6 +52,9 @@ def downloadVideo():
                                     
                 message = "Vídeo baixado com sucesso!"
                 errorType = 1
+
+                time.sleep(2)
+
                 return send_file(filename, as_attachment=True)
             
 
