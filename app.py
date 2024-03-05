@@ -34,25 +34,17 @@ def downloadVideo():
                 
 
                 if file_format == "mp3":
-                    downloads_directory = "Downloads"
-                    current_directory = os.getcwd()
+                    output_path = "Downloads"
+                    audio_stream = url.streams.filter(only_audio=True).first()
+                    audio_stream.download(output_path=output_path)
+                    # Renomeando o arquivo para ter a extensão .mp3
+                    default_filename = audio_stream.default_filename
+                    os.rename(os.path.join(output_path, default_filename), os.path.join(output_path, default_filename.split('.')[0] + ".mp3"))
+                    
+                    # Enviando o arquivo mp3 como resposta
+                    mp3_filename = os.path.join(output_path, default_filename.split('.')[0] + ".mp3")
+                    return send_file(mp3_filename, as_attachment=True)
 
-                    downloads_path = os.path.join(current_directory, downloads_directory)
-
-                    if os.path.exists(downloads_path) and os.path.isdir(downloads_path):
-                        for filename in os.listdir(downloads_path):
-
-                            if filename.endswith(".mp4"):
-                                mp4_path = os.path.join(downloads_path, filename)
-                                mp3_path = os.path.join(downloads_path, os.path.splitext(filename)[0] + ".mp3")      
-                                video = mp.AudioFileClip(mp4_path)
-                                video.write_audiofile(mp3_path)
-                                os.remove(mp4_path)
-
-                                message = "Vídeo baixado com sucesso!"
-                                errorType = 1
-
-                                return send_file(mp3_path, as_attachment=True)
                                     
                 message = "Vídeo baixado com sucesso!"
                 errorType = 1
