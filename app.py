@@ -56,6 +56,7 @@ def downloadVideo():
                 time.sleep(2)
 
                 return send_file(filename, as_attachment=True)
+                
             
 
             else:
@@ -68,5 +69,3 @@ def downloadVideo():
 
     return render_template('index.html', message=message, errorType=errorType)
     
-if __name__ == "__main__":
-    app.run(debug=True)
