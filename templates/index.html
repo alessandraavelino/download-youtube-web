@@ -30,13 +30,13 @@
         <img src="../static/songslicer.svg" width="100" height="100" alt="Logo do SongSlicer">
         <span class="ml-3 text-xl">SongSlicer</span>
       </a>
-      <nav class="md:ml-auto font-semibold flex flex-wrap items-center text-base justify-center">
+      <nav class="md:ml-auto font-semibold flex flex-wrap  text-base ">
         <a class="mr-5 hover:text-indigo-500 cursor-pointer">Download</a>
         <a href="#sobre" class="mr-5 hover:text-indigo-500 cursor-pointer">Sobre</a>
         <!-- <a class="mr-5 hover:text-indigo-500 cursor-pointer">FAQ</a> -->
       </nav>
       <a href="http://api.whatsapp.com/send?phone=5583996097405&text=Olá, preciso de ajuda"
-        class="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Suporte
+        class="inline-flex bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Suporte
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -46,10 +46,10 @@
   </header>
   <section class="text-gray-600 body-font" id="sobre">
 
-    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col ">
 
       <div
-        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 ">
 
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Baixe, converta e edite as
           suas mídias mais rápido! </h1>
@@ -57,7 +57,7 @@
           configurar seu download.</p>
 
         <form class="w-full" action="/" method="post">
-          <div class=" w-full md:justify-start justify-center items-end">
+          <div class=" w-full md:justify-start items-end">
             <div class="relative mr-4 md:w-3/4 xxl:w-full xl:w-1/2 w-2/4">
 
               {% if message is defined and message %}
@@ -75,12 +75,12 @@
               {% endif %}
             </div>
 
-            <label for="video_url" class="leading-7 text-sm text-gray-600">URL do Vídeo</label>
+            <label for="video_url" class="leading-7 text-left text-sm text-gray-600">URL do Vídeo</label>
             <input type="text" id="video_url" name="video_url"
               class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               
               <div class=" py-4">
-                <label for="video_url" class="leading-7 text-sm text-gray-600">Cortar mídia</label>
+                <label for="video_url" class="leading-7 text-left text-sm text-gray-600">Cortar mídia</label>
               <div class="flex">
                 <input placeholder="Tempo inicial (mm:ss)" type="text" id="initial" name="initial"
               class=" bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
@@ -88,7 +88,7 @@
               class="mx-4 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               </div>
             </div>
-            <div class="py-5">
+            <div class="py-5 px-2">
               <label>Formato:</label>
               <div class="flex items-center">
                 <input id="mp4" type="radio" value="mp4" name="fileFormat"
