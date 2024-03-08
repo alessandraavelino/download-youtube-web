@@ -33,15 +33,15 @@
       <nav class="md:ml-auto font-semibold flex flex-wrap items-center text-base justify-center">
         <a class="mr-5 hover:text-indigo-500 cursor-pointer">Download</a>
         <a href="#sobre" class="mr-5 hover:text-indigo-500 cursor-pointer">Sobre</a>
-        <a class="mr-5 hover:text-indigo-500 cursor-pointer">Em breve</a>
+        <!-- <a class="mr-5 hover:text-indigo-500 cursor-pointer">FAQ</a> -->
       </nav>
-      <button
-        class="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Contato
+      <a href="http://api.whatsapp.com/send?phone=5583996097405&text=Olá, preciso de ajuda"
+        class="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Suporte
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
-      </button>
+      </a>
     </div>
   </header>
   <section class="text-gray-600 body-font" id="sobre">
@@ -78,7 +78,16 @@
             <label for="video_url" class="leading-7 text-sm text-gray-600">URL do Vídeo</label>
             <input type="text" id="video_url" name="video_url"
               class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-
+              
+              <div class=" py-4">
+                <label for="video_url" class="leading-7 text-sm text-gray-600">Cortar mídia</label>
+              <div class="flex">
+                <input placeholder="Tempo inicial (mm:ss)" type="text" id="initial" name="initial"
+              class=" bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input placeholder="Tempo final (mm:ss)" type="text" id="final" name="final"
+              class="mx-4 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            </div>
             <div class="py-5">
               <label>Formato:</label>
               <div class="flex items-center">
@@ -121,7 +130,7 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Livre de vírus maliciosos</span>
+            <span class="title-font font-medium">Livre de Vírus Maliciosos</span>
           </div>
         </div>
         <div class="p-2 sm:w-1/2 w-full">
@@ -131,7 +140,7 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Sem anúncios</span>
+            <span class="title-font font-medium">Suporte ao usuário</span>
           </div>
         </div>
         <div class="p-2 sm:w-1/2 w-full">
@@ -141,7 +150,7 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Download rápido</span>
+            <span class="title-font font-medium">Download rápido (ou quase🤣)</span>
           </div>
         </div>
         <div class="p-2 sm:w-1/2 w-full">
@@ -151,32 +160,23 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Automação de download em massa (em breve)</span>
-          </div>
-        </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-              class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-              <path d="M22 4L12 14.01l-3-3"></path>
-            </svg>
-            <span class="title-font font-medium">Pack Truffaut Blue</span>
-          </div>
-        </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-              class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-              <path d="M22 4L12 14.01l-3-3"></path>
-            </svg>
-            <span class="title-font font-medium">The Catcher In The Rye</span>
+            <span class="title-font font-medium">Atualizações regulares</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <footer class="text-gray-600 body-font">
+    
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">© 2024 Desenvolvido com ❤️ por <a href="https://instagram.com/__alessandraavelino" target="_blank">Alessandra</a>
+          
+        </p>
+        <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">SongSlicer</span>
+      </div>
+    </div>
+  </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Função para esconder o alerta após 3 segundos
