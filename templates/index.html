@@ -37,16 +37,13 @@
         <span class="ml-3 text-xl">SongSlicer</span>
       </a>
       <nav class="md:ml-auto font-semibold flex flex-wrap  text-base ">
-        <a class="mr-5 hover:text-indigo-500 cursor-pointer">Download</a>
+        <a href="#inicio" class="mr-5 hover:text-indigo-500 cursor-pointer">Início</a>
         <a href="#sobre" class="mr-5 hover:text-indigo-500 cursor-pointer">Sobre</a>
         <!-- <a class="mr-5 hover:text-indigo-500 cursor-pointer">FAQ</a> -->
       </nav>
-      <a href="http://api.whatsapp.com/send?phone=5583996097405&text=Olá, preciso de ajuda"
+      <a target="_blank" href="http://api.whatsapp.com/send?phone=5583996097405&text=Help-me"
         class="inline-flex bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Suporte
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
+
       </a>
     </div>
   </header>
@@ -87,12 +84,12 @@
               
               <div class=" py-4">
                 <label for="video_url" class="leading-7 text-left text-sm text-gray-600">Cortar mídia</label>
-              <div class="flex">
-                <input placeholder="Tempo inicial (mm:ss)" type="text" id="initial" name="initial"
-              class=" bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-              <input placeholder="Tempo final (mm:ss)" type="text" id="final" name="final"
-              class="mx-4 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-              </div>
+                <div class="flex w-full">
+                  <input placeholder="Tempo inicial (mm:ss)" type="text" id="initial" name="initial"
+                    class="mr-2 w-full pl-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                  <input placeholder="Tempo final (mm:ss)" type="text" id="final" name="final"
+                    class="w-full pl-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
             </div>
             <div class="py-5 px-2">
               <label>Formato:</label>
