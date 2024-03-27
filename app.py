@@ -106,6 +106,11 @@ def downloadVideo():
 
 
     return render_template('index.html', message=message, errorType=errorType)
+
+@app.route("/ads.txt", methods=["GET", "POST"])
+def ads():
+    return render_template('ads.txt')
+
     
 if __name__ == "__main__":
     app.run(debug=True)
