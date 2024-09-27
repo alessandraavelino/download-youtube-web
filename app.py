@@ -35,10 +35,15 @@ def downloadVideo():
             if validVideoUrl:
                 # Configurações do yt-dlp
                 ydl_opts = {
-                     'cookiefile': 'cookies.txt', 
+                    'cookiefile': 'cookies.txt',  # Use valid cookies
                     'format': 'best',
                     'outtmpl': 'Downloads/%(title)s.%(ext)s',
+                    'noplaylist': True,  # Disable playlist downloading if you want only single videos
+                    'age_limit': 18,  # Bypass age-restricted content
+                    'geo_bypass': True,  # Bypass geo-restricted content
+                    'ignoreerrors': True,  # Continue even when errors occur
                 }
+
                 
                 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                     info_dict = ydl.extract_info(youtubeUrl, download=True)
