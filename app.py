@@ -14,17 +14,17 @@ app = Flask(__name__)
 def downloadVideo():
     message = ''
     errorType = 0
-
     if request.method == 'POST' and 'video_url' in request.form:
         youtubeUrl = request.form["video_url"]
         start_time = str(request.form["initial"])
         end_time = str(request.form["final"])
         file_format = request.form.get("fileFormat")
-
-        print(f"Formato do arquivo: {file_format}")
-        print(f"URL do YouTube: {youtubeUrl}")
+        
+        print(file_format)
+        print(youtubeUrl)
 
         if youtubeUrl:
+            # Validação da URL do YouTube
             validateVideoUrl = (
                 r'(https?://)?(www\.)?'
                 '(youtube|youtu|youtube-nocookie)\.(com|be)/'
@@ -33,39 +33,94 @@ def downloadVideo():
             validVideoUrl = re.match(validateVideoUrl, youtubeUrl)
 
             if validVideoUrl:
-                try:
-                    ydl_opts = {
-                        'format': 'bestvideo+bestaudio/best',
-                        'outtmpl': 'Downloads/%(title)s.%(ext)s',
-                        'http_user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',  # Substitua pelo seu proxy
+                # Configurações do yt-dlp
+                ydl_opts = {
+                     'cookiefile': 'cookies.txt', 
+                    'format': 'best',
+                    'outtmpl': 'Downloads/%(title)s.%(ext)s',
+                }
+                
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    info_dict = ydl.extract_info(youtubeUrl, download=True)
+                    video_title = info_dict.get("title", None)
+                    video_filename = f"Downloads/{video_title}.mp4"
+
+                time.sleep(5)
+
+                # Se o formato for MP3
+                if file_format == "mp3":
+                    output_path = "Downloads"
+                    audio_stream_opts = {
+                        'format': 'bestaudio/best',
+                        'postprocessors': [{
+                            'key': 'FFmpegExtractAudio',
+                            'preferredcodec': 'mp3',
+                            'preferredquality': '192',
+                        }],
+                        'outtmpl': output_path + '/%(title)s.%(ext)s'
                     }
 
-                    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                        ydl.download([youtubeUrl])
+                    with yt_dlp.YoutubeDL(audio_stream_opts) as ydl:
+                        info_dict = ydl.extract_info(youtubeUrl, download=True)
+                        mp3_filename = os.path.join(output_path, f"{info_dict['title']}.mp3")
+                    
+                    time.sleep(2)
 
-                    filename = os.path.join("Downloads", "cut_video.mp4")  # Ajuste conforme o nome do arquivo
+                    # Cortar o áudio, se necessário
+                    if start_time and end_time:
+                        audio_clip = AudioFileClip(mp3_filename)
+                        fstart_time = utils.converter(start_time)
+                        fend_time = utils.converter(end_time)
+                        
+                        audio_clip = audio_clip.subclip(fstart_time, fend_time)
 
-                    # Se o formato for mp3
-                    if file_format == "mp3":
-                        # Converta o vídeo para mp3 aqui, se necessário
-                        pass
+                        # Nome do arquivo cortado
+                        mp3_filename_cut = os.path.join(output_path, "cut_audio.mp3")
+                        audio_clip.write_audiofile(mp3_filename_cut)
+                        mp3_filename = mp3_filename_cut
+                    
+                    # Envia o arquivo mp3 como resposta
+                    return send_file(mp3_filename, as_attachment=True)
 
-                    message = "Vídeo baixado com sucesso!"
-                    errorType = 1
+                else:
+                    # Se for vídeo e se os tempos de início e fim forem especificados
+                    if start_time and end_time:
+                        video_clip = VideoFileClip(video_filename)
 
-                    return send_file(filename, as_attachment=True)
+                        # Definindo os tempos de corte
+                        end_time = end_time if end_time is not None else video_clip.duration
 
-                except Exception as e:
-                    message = f"Erro ao baixar a mídia: {str(e)}"
-                    errorType = 0
+                        # Realiza o corte do vídeo
+                        cut_clip = video_clip.subclip(start_time, end_time)
+
+                        # Nome do arquivo de vídeo cortado
+                        cut_filename = "Downloads/cut_video.mp4"
+
+                        # Salva o vídeo cortado
+                        cut_clip.write_videofile(cut_filename, codec="libx264", audio_codec="aac")
+
+                        # Fecha o vídeo original
+                        video_clip.close()
+
+                        # Envia o arquivo de vídeo cortado como resposta
+                        return send_file(cut_filename, as_attachment=True)
+                
+                message = "Vídeo baixado com sucesso!"
+                errorType = 1
+
+                time.sleep(2)
+
+                return send_file(video_filename, as_attachment=True)
+            
             else:
-                message = "URL do vídeo inválida!"
+                message = "Erro ao baixar mídia! URL inválida."
                 errorType = 0
         else:
             message = "Digite a URL do Vídeo do YouTube"
             errorType = 0
 
     return render_template('index.html', message=message, errorType=errorType)
+
 @app.route("/ads.txt", methods=["GET", "POST"])
 def ads():
     return render_template('ads.txt')
