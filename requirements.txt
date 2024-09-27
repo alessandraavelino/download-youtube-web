@@ -3,3 +3,4 @@ Flask
 pytube
 pathlib
 gunicorn
+yt_dlp
