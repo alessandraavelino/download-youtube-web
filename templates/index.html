@@ -8,11 +8,11 @@
   <link rel = "canonical" href = "https://songslicer.onrender.com" /> 
   <meta name="google-site-verification" content="8SPBEN3iEBUXw4sb6nAHMBN6oemQFQWYsFOq4sqa1Rs" />
   <meta name="google-adsense-account" content="ca-pub-9353242131390060">
-  <title>SongSlicer | Baixar vídeos do YouTube</title>
+  <title>SongSlicer | Download YouTube videos</title>
   <link rel="icon" type="image/x-icon" href="../static/songslicer.svg">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9353242131390060"
+  <script defer async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9353242131390060"
      crossorigin="anonymous"></script>
   <script>
     tailwind.config = {
@@ -37,27 +37,27 @@
         <span class="ml-3 text-xl">SongSlicer</span>
       </a>
       <nav class="md:ml-auto font-semibold flex flex-wrap  text-base ">
-        <a href="#inicio" class="mr-5 hover:text-indigo-500 cursor-pointer">Início</a>
-        <a href="#sobre" class="mr-5 hover:text-indigo-500 cursor-pointer">Sobre</a>
+        <a href="#home" class="mr-5 hover:text-indigo-500 cursor-pointer">Home</a>
+        <a href="#about" class="mr-5 hover:text-indigo-500 cursor-pointer">About</a>
+        <a href="#how-download" class="mr-5 hover:text-indigo-500 cursor-pointer">How Download</a>
+        <a href="#how-download" class="mr-5 hover:text-indigo-500 cursor-pointer">FAQ</a>
         <!-- <a class="mr-5 hover:text-indigo-500 cursor-pointer">FAQ</a> -->
       </nav>
       <a target="_blank" href="http://api.whatsapp.com/send?phone=5583996097405&text=Help-me"
-        class="inline-flex bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Suporte
+        class="inline-flex bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white font-bold mt-4 md:mt-0">Support
 
       </a>
     </div>
   </header>
-  <section class="text-gray-600 body-font" id="sobre">
+  <section class="text-gray-600 body-font" id="about">
 
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col ">
 
       <div
         class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 ">
 
-        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Baixe, converta e edite as
-          suas mídias mais rápido com o SongSlicer! </h1>
-        <p class="mb-8 leading-relaxed">Basta copiar a URL do Vídeo que deseja baixar do YouTube, colar abaixo e
-          configurar seu download para que o SongSlicer baixe.</p>
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Download, convert and edit your media faster with SongSlicer!</h1>
+        <p class="mb-8 leading-relaxed">Just copy the URL of the Video you want to download from YouTube, paste it below and set up your download.</p>
 
         <form class="w-full" action="/" method="post">
           <div class=" w-full md:justify-start items-end">
@@ -78,21 +78,21 @@
               {% endif %}
             </div>
 
-            <label for="video_url" class="leading-7 text-left text-sm text-gray-600">URL do Vídeo</label>
+            <label for="video_url" class="leading-7 text-left text-sm text-gray-600">Video URL</label>
             <input type="text" id="video_url" name="video_url"
               class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
               
               <div class=" py-4">
-                <label for="video_url" class="leading-7 text-left text-sm text-gray-600">Cortar mídia</label>
+                <label for="video_url" class="leading-7 text-left text-sm text-gray-600">Cut media</label>
                 <div class="flex w-full">
-                  <input placeholder="Tempo inicial (mm:ss)" type="text" id="initial" name="initial"
+                  <input placeholder="Initial Time (mm:ss)" type="text" id="initial" name="initial"
                     class="mr-2 w-full pl-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                  <input placeholder="Tempo final (mm:ss)" type="text" id="final" name="final"
+                  <input placeholder="Final Time (mm:ss)" type="text" id="final" name="final"
                     class="w-full pl-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
             </div>
             <div class="py-5 px-2">
-              <label>Formato:</label>
+              <label>File type:</label>
               <div class="flex items-center">
                 <input id="mp4" type="radio" value="mp4" name="fileFormat"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -108,7 +108,7 @@
 
 
             <button type="submit"
-              class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded font-bold text-lg">Baixar</button>
+              class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded font-bold text-lg">Download</button>
         </form>
       </div>
 
@@ -121,7 +121,7 @@
   <section class="text-gray-600 body-font bg-indigo-500">
     <div class="container px-5 py-24 mx-auto">
       <div class="text-center mb-20">
-        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Por que usar o SongSlicer ?
+        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Why use SongSlicer?
         </h1>
         <!-- <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p> -->
       </div>
@@ -133,7 +133,7 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Livre de Vírus Maliciosos</span>
+            <span class="title-font font-medium">Free from Malicious Viruses</span>
           </div>
         </div>
         <div class="p-2 sm:w-1/2 w-full">
@@ -143,7 +143,7 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Suporte ao usuário</span>
+            <span class="title-font font-medium">User Support</span>
           </div>
         </div>
         <div class="p-2 sm:w-1/2 w-full">
@@ -153,7 +153,7 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Download rápido</span>
+            <span class="title-font font-medium">Fast Download</span>
           </div>
         </div>
         <div class="p-2 sm:w-1/2 w-full">
@@ -163,17 +163,230 @@
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Atualizações regulares</span>
+            <span class="title-font font-medium">Regular Updates</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <section class="text-gray-600 body-font" id="how-download">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+        <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+        </div>
+        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+          <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Easy YouTube Downloads</h2>
+          <p class="leading-relaxed text-base">With SongSlicer, downloading YouTube media is quick and effortless. Get any YouTube video in MP4 or MP3 format in just a few clicks!</p>
+          <a class="mt-3 text-indigo-500 inline-flex items-center" href="#">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+          <h2 class="text-gray-900 text-lg title-font font-medium mb-2">MP3 & MP4 Formats</h2>
+          <p class="leading-relaxed text-base">Download YouTube audio or video in MP3 or MP4 formats, making it compatible with any device and ready to use wherever you go.</p>
+          <a class="mt-3 text-indigo-500 inline-flex items-center" href="#">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+            <circle cx="6" cy="6" r="3"></circle>
+            <circle cx="6" cy="18" r="3"></circle>
+            <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+        <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+          <h2 class="text-gray-900 text-lg title-font font-medium mb-2">User-Friendly & Fast</h2>
+          <p class="leading-relaxed text-base">SongSlicer’s intuitive design allows you to convert and download YouTube videos in seconds. Just paste the link, choose your format, and hit download!</p>
+          <a class="mt-3 text-indigo-500 inline-flex items-center" href="#">Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <button class="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Started</button>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font bg-indigo-500">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-white mb-4">Why choose SongSlicer?</h1>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-white">
+          Discover why SongSlicer is the best choice for downloading music and videos with quality, speed and security.
+        </p>
+      </div>
+      <div class="flex flex-wrap -m-4 text-center">
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="bg-indigo-100 p-6 rounded-lg">
+            <svg class="text-indigo-500 w-12 h-12 mb-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 8V4m0 4l-3 3m3-3l3 3M12 16v4m0-4l-3-3m3 3l3-3"></path>
+            </svg>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Velocity</h2>
+            <p class="leading-relaxed text-base">Fast and efficient downloads, without loss of quality, so you can access your media in seconds.</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="bg-indigo-100 p-6 rounded-lg">
+            <svg class="text-indigo-500 w-12 h-12 mb-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12h8m-4-4v8"></path>
+            </svg>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Simplicity</h2>
+            <p class="leading-relaxed text-base">User-friendly and intuitive interface, making it easy to download MP3 and MP4 without complications.</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="bg-indigo-100 p-6 rounded-lg">
+            <svg class="text-indigo-500 w-12 h-12 mb-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 12h18m-9-9v18"></path>
+            </svg>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Quality</h2>
+            <p class="leading-relaxed text-base">Downloaded media with high sound and video quality, maintaining fidelity to the original.</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="bg-indigo-100 p-6 rounded-lg">
+            <svg class="text-indigo-500 w-12 h-12 mb-3 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M8 7V3H5v4H3l3 4h2l3-4H8zM18 7V3h-3v4h-2l3 4h2l3-4h-3z"></path>
+            </svg>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Ongoing support</h2>
+            <p class="leading-relaxed text-base">Support available to help with questions and ensure a smooth experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-600 body-font" id="faq">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Frequently Asked Questions</h1>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500">
+          Find answers to common questions about using SongSlicer to download and convert media.
+        </p>
+      </div>
+      <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+        <div class="w-full px-4 py-2">
+          <details class="mb-4">
+            <summary class="font-semibold bg-gray-100 rounded-md py-2 px-4">How do I download a video as MP4?</summary>
+            <span class="mt-2 text-gray-600">
+              Simply copy the video URL, paste it into the SongSlicer converter, select "MP4," and click "Download." Your video will be ready in moments.
+            </span>
+          </details>
+        </div>
+        <div class="w-full px-4 py-2">
+          <details class="mb-4">
+            <summary class="font-semibold bg-gray-100 rounded-md py-2 px-4">Can I download just the audio (MP3) from a video?</summary>
+            <span class="mt-2 text-gray-600">
+              Yes! Paste the video link into SongSlicer, choose "MP3," and download. Perfect for extracting audio from your favorite videos.
+            </span>
+          </details>
+        </div>
+        <div class="w-full px-4 py-2">
+          <details class="mb-4">
+            <summary class="font-semibold bg-gray-100 rounded-md py-2 px-4">Is SongSlicer free to use?</summary>
+            <span class="mt-2 text-gray-600">
+              Absolutely! SongSlicer is completely free, and there are no hidden charges for downloading or converting files.
+            </span>
+          </details>
+        </div>
+        <div class="w-full px-4 py-2">
+          <details class="mb-4">
+            <summary class="font-semibold bg-gray-100 rounded-md py-2 px-4">What video/audio quality can I expect?</summary>
+            <span class="mt-2 text-gray-600">
+              SongSlicer provides high-quality downloads for both MP4 and MP3, maintaining the original media's clarity and fidelity.
+            </span>
+          </details>
+        </div>
+        <div class="w-full px-4 py-2">
+          <details class="mb-4">
+            <summary class="font-semibold bg-gray-100 rounded-md py-2 px-4">Can I use SongSlicer on my phone?</summary>
+            <span class="mt-2 text-gray-600">
+              Yes, SongSlicer is mobile-friendly and works on both Android and iOS devices. Enjoy seamless downloads on the go!
+            </span>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-gray-600 bg-indigo-500 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-white mb-4">Popular Downloads</h1>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-white">
+          Discover the most popular videos and music downloads available through SongSlicer. Download instantly with a single click!
+        </p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <!-- Item 1 -->
+        <div class="lg:w-1/2 w-full p-4">
+          <div class="flex items-center h-full p-6 rounded-lg bg-gray-100">
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium">Alok, The Chainsmokers & Mae Stephens</h2>
+              <p class="leading-relaxed text-base">One of the most downloaded songs this month on SongSlicer.</p>
+            </div>
+            <a href="#" class="ml-auto text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">Download Now</a>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="lg:w-1/2 w-full p-4">
+          <div class="flex items-center h-full p-6 rounded-lg bg-gray-100">
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium">HUGEL x Topic x Arash feat. Daecolm - I Adore You</h2>
+              <p class="leading-relaxed text-base">This video is trending among SongSlicer users for its quality content.</p>
+            </div>
+            <a href="#" class="ml-auto text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">Download Now</a>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="lg:w-1/2 w-full p-4">
+          <div class="flex items-center h-full p-6 rounded-lg bg-gray-100">
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium">Kygo, Ava Max - Whatever</h2>
+              <p class="leading-relaxed text-base">A fan-favorite song frequently downloaded by our users.</p>
+            </div>
+            <a href="#" class="ml-auto text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">Download Now</a>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="lg:w-1/2 w-full p-4">
+          <div class="flex items-center h-full p-6 rounded-lg bg-gray-100">
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium">Trending Video - Creator Name</h2>
+              <p class="leading-relaxed text-base">A highly downloaded video on SongSlicer, popular for its quality and content.</p>
+            </div>
+            <a href="#" class="ml-auto text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded">Download Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
   <footer class="text-gray-600 body-font">
     
     <div class="bg-gray-100">
       <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-        <p class="text-gray-500 text-sm text-center sm:text-left">© 2024 Desenvolvido com ❤️ por <a href="https://instagram.com/__alessandraavelino" target="_blank">Alessandra</a>
+        <p class="text-gray-500 text-sm text-center sm:text-left">© 2024 Developed with ❤️ </a>
           
         </p>
         <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">SongSlicer</span>
