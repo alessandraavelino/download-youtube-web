@@ -4,3 +4,4 @@ pytube
 pathlib
 gunicorn
 yt_dlp
+pytubefix
